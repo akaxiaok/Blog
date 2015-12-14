@@ -1,2 +1,2 @@
 # Blog
-博客笔记备份
+[博客](http://www.cnblogs.com/castdream/)笔记备份
