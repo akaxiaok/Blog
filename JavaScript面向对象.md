@@ -259,7 +259,7 @@ MyJQ.prototype.init.prototype = MyJQ.prototype;
 ![MyJQ](http://images.cnblogs.com/cnblogs_com/castdream/758571/o_MyJQ.png)
 
 ``` js
-console.log($('dom').otherFunc().selector);
+console.log(MyJQ('dom').otherFunc().selector);
 ```
 ## 新时代的面向对象
 
