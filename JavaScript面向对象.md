@@ -256,6 +256,7 @@ let MyJQ = function (selector) {
 MyJQ.prototype.init.prototype = MyJQ.prototype;
 ```
 这样init()的实例就可以使用定义在jQuery上的方法了，相当于继承了jQuery
+![MyJQ](http://images.cnblogs.com/cnblogs_com/castdream/758571/o_MyJQ.png)
 
 ``` js
 console.log($('dom').otherFunc().selector);
