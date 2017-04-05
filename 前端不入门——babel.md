@@ -1,4 +1,5 @@
 # 前端不入门——babel
+新的 es 标准新增了许多的语法特性和方法，但是许多运行环境还不支持新的标准，我们就需要一个工具来将使用新标准写成的代码转换为符合久标准的代码。babel 就是这样一个工具。
 ## 安装
 ### 安装 babel
 ``` bash
@@ -59,3 +60,15 @@ babel-node test.js
 
 ### 配合其他工具使用
 参考babel以及各个工具的官方文档，也可以关注我后续介绍其他工具的博客。
+## babel-polyfill
+babel 只转换新的语法，而不会转换新的 es 标准新增的对象和方法，要使用这些对象和方法，需要为当前环境增加一个垫片。
+``` bash
+$ npm install --save babel-polyfill
+```
+在代码头部引入
+``` js
+// 根据使用的代码模块化工具
+import 'babel-polyfill';
+// 或者
+require('babel-polyfill');
+```
