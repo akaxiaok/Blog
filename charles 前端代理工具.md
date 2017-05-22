@@ -1,13 +1,13 @@
-在前端开发的过程中，有时候生产环境出了问题需要解决，但是那上面的代码又不能随便修改，就需要在本地拦截远程文件，替换为自己本地的文件，类似 fiddler 这样的软件就有这个功能。但是公司最近的环境不知道做了什么变动，fiddler 用不了，折腾了几天也找不到解决方法，只好谋他法。最后，找到了 Charles，它能够配合公司环境正常运行，使用也比较方便。接下来介绍一下它的使用方法。
+在前端开发的过程中，有时候生产环境出了问题需要解决，但是那上面的代码又不能随便修改，就需要在本地将远程文件拦截并替换为自己本地的文件。fiddler 这样的软件就有这个功能。但是公司最近的环境不知道做了什么变动，fiddler 用不了，折腾了几天也解决不了，只好谋它法。最后，找到了 Charles，它能够很好的适应公司环境，使用起来也比较方便。接下来介绍一下它的使用方法。
 ## 安装
-下载安装不用多说。
+下载安装不用多说。一路确定即可，中间会让你选择是否安装 Firefox 插件，按需选择即可。
 ## 安装证书
 为了拦截 HTTPS 请求，需要安装 SSL 证书。安装过程如图
 ![install SSl](https://github.com/akaxiaok/Blog/blob/master/charles/1.install%20SSL.png?raw=true)
 ![install SSl](https://github.com/akaxiaok/Blog/blob/master/charles/2.install%20SSl.png?raw=true)
 ![install SSl](https://github.com/akaxiaok/Blog/blob/master/charles/3.install%20SSl.png?raw=true)
 ## 设置代理
-SLL 解密没有默认打开，需要手动设置，可以只设置需要拦截的地址和端口，也可以留空则全部地址和端口都会解密。
+SLL 解密没有默认打开，需要手动设置。可以只设置需要拦截的地址和端口，也可以留空，则全部地址和端口都会解密。
 ![not decode](https://github.com/akaxiaok/Blog/blob/master/charles/4.not%20decode.png?raw=true)
 ![set decode](https://github.com/akaxiaok/Blog/blob/master/charles/5.set%20decode.png?raw=true)
 ![set decode](https://github.com/akaxiaok/Blog/blob/master/charles/6.set%20decode.png?raw=true)
