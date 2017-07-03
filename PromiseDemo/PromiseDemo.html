@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head >
+    <meta charset="UTF-8" >
+    <title >Title</title >
+</head >
+<body >
+<script >
+  const getStatusFromGitHub = (user) => {
+
+    return new Promise((resolve, reject) => {
+      const xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", `https://api.github.com/users/${user}`, true);
+      xmlhttp.send();
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+          const res = xmlhttp.responseText;
+          resolve(JSON.parse(res));
+        } else if (xmlhttp.readyState === 4) {
+          const res = xmlhttp.responseText;
+          reject(JSON.parse(res));
+        }
+      }
+    });
+  };
+  getStatusFromGitHub('akaxiaok').then(res => {
+    console.log(`my name is ${res.name}`);
+  }).catch(err => {
+    console.log(err.message);
+  })
+
+  Promise.all([getStatusFromGitHub('akaxiaok'), getStatusFromGitHub('octocat')]).then(res => {
+    console.log(`get ${res[0].name} and ${res[1].name}`);
+  })
+  Promise.race([getStatusFromGitHub('akaxiaok'), getStatusFromGitHub('octocat')]).then(res => {
+    console.log(`get ${res.name} first`);
+  })
+
+</script >
+</body >
+</html >
