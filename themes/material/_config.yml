@@ -4,9 +4,9 @@
 
 # Head info
 head:
-    favicon: "Blog/img/favicon.png"
-    high_res_favicon: "Blog//img/favicon.png"
-    apple_touch_icon: "Blog//img/favicon.png"
+    favicon: "/img/favicon.png"
+    high_res_favicon: "/img/favicon.png"
+    apple_touch_icon: "/img/favicon.png"
     keywords:
     site_verification:
         google:
@@ -70,11 +70,11 @@ background:
 
 # Images Settings
 img:
-    logo: "Blog//img/logo.png"
-    avatar: "Blog//img/avatar.png"
-    daily_pic: "Blog//img/daily_pic.png"
-    sidebar_header: "Blog//img/sidebar_header.png"
-    random_thumbnail: "Blog//img/random/material-"
+    logo: "/img/logo.png"
+    avatar: "/img/avatar.png"
+    daily_pic: "/img/daily_pic.png"
+    sidebar_header: "/img/sidebar_header.png"
+    random_thumbnail: "/img/random/material-"
     footer_image:
         #upyun_logo:
             #link: "https://www.upyun.com/"
@@ -120,7 +120,7 @@ toc:
 
 # SNS Menu
 sns:
-    email: akaxiaok@email.com
+    email: youremail@email.com
     facebook: "https://www.facebook.com/facebook"
     twitter: "https://twitter.com/twitter"
     googleplus: "https://www.google.com/"
@@ -135,9 +135,13 @@ sns:
 
 # SNS Share Switch
 sns_share:
+    twitter: true
+    facebook: true
+    googleplus: true
     weibo: true
     linkedin: false
     qq: false
+    telegram: false
 
 # Sidebar Customize
 sidebar:
