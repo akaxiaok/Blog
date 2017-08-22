@@ -134,11 +134,6 @@ sns_share:
 
 # Sidebar Customize
 sidebar:
-    dropdown:
-        use: false
-        Email Me:
-            link: "#"
-            icon: email
     homepage:
         use: true
         icon: home
