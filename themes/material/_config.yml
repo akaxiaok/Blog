@@ -4,9 +4,9 @@
 
 # Head info
 head:
-    favicon: "img/favicon.png"
-    high_res_favicon: "img/favicon.png"
-    apple_touch_icon: "img/favicon.png"
+    favicon: "/Blogimg/favicon.png"
+    high_res_favicon: "/Blog/img/favicon.png"
+    apple_touch_icon: "/Blog/img/favicon.png"
     keywords:
     site_verification:
         google:
@@ -70,11 +70,11 @@ background:
 
 # Images Settings
 img:
-    logo: "img/logo.png"
-    avatar: "img/avatar.png"
-    daily_pic: "img/daily_pic.png"
-    sidebar_header: "img/sidebar_header.png"
-    random_thumbnail: "img/random/material-"
+    logo: "/Blog/img/logo.png"
+    avatar: "/Blog/img/avatar.png"
+    daily_pic: "/Blog/img/daily_pic.png"
+    sidebar_header: "/Blog/img/sidebar_header.png"
+    random_thumbnail: "/Blog/img/random/material-"
     footer_image:
         #upyun_logo:
             #link: "https://www.upyun.com/"
@@ -120,18 +120,7 @@ toc:
 
 # SNS Menu
 sns:
-    email: youremail@email.com
-    facebook: "https://www.facebook.com/facebook"
-    twitter: "https://twitter.com/twitter"
-    googleplus: "https://www.google.com/"
-    weibo:
-    instagram:
-    tumblr:
-    github:
-    linkedin:
-    zhihu:
-    bilibili:
-    telegram:
+    email: akaxiaok@email.com
 
 # SNS Share Switch
 sns_share:
@@ -146,6 +135,7 @@ sns_share:
 # Sidebar Customize
 sidebar:
     dropdown:
+        use: false
         Email Me:
             link: "#"
             icon: email
