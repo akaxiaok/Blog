@@ -275,7 +275,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/Blog/css/prism.css" type="text/css"></head>
 
 
     
@@ -472,21 +472,55 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>新的 es 标准新增了许多的语法特性和方法，但是许多运行环境还不支持新的标准，我们就需要一个工具来将使用新标准写成的代码转换为符合久标准的代码。babel 就是这样一个工具。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装-babel"><a href="#安装-babel" class="headerlink" title="安装 babel"></a>安装 babel</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g babel-cli</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-cli</div></pre></td></tr></table></figure>
-<h3 id="安装-preset"><a href="#安装-preset" class="headerlink" title="安装 preset"></a>安装 preset</h3><p>没有 preset，bable 不会做任何事。preset 有很多，可以参考<a href="https://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">官方文档</a>选择自己需要的，最简单的就是使用 ==babel-preset-env== ,它包含了所有 es 标准和还未确定的标准。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-preset-env</div></pre></td></tr></table></figure></p>
-<p>如果要使用react，再添加一个 ==babel-preset-react== 就行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev babel-preset-react</div></pre></td></tr></table></figure></p>
-<h2 id="配置-babelrc"><a href="#配置-babelrc" class="headerlink" title="配置.babelrc"></a>配置.babelrc</h2><p>在 .babelrc 里配置需要使用的preset<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"presets"</span>: [<span class="string">"env"</span>,<span class="string">"react"</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h3><p>现在就可以使用 bebel-cli 命令行工具来转换 es或者react 代码了。<br>例如，新建文件 test.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>直接使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ babel test.js</div></pre></td></tr></table></figure></p>
-<p>会将转换结果输出到命令行。结果如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> x = <span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>使用 -o 选项可以指定输出文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ babel test.js -o babel.js</div></pre></td></tr></table></figure></p>
-<p>babel-cli 还提供了一个直接执行新标准 es 代码的环境 babel-node。在 test.js 添加<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x();</div></pre></td></tr></table></figure></p>
-<p>执行代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">babel-node test.js</div></pre></td></tr></table></figure></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="安装-babel"><a href="#安装-babel" class="headerlink" title="安装 babel"></a>安装 babel</h3><pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> -g babel-cli
+</code></pre>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev babel-cli
+</code></pre>
+<h3 id="安装-preset"><a href="#安装-preset" class="headerlink" title="安装 preset"></a>安装 preset</h3><p>没有 preset，bable 不会做任何事。preset 有很多，可以参考<a href="https://babeljs.io/docs/plugins/#presets" target="_blank" rel="external">官方文档</a>选择自己需要的，最简单的就是使用 ==babel-preset-env== ,它包含了所有 es 标准和还未确定的标准。</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev babel-preset-env
+</code></pre>
+<p>如果要使用react，再添加一个 ==babel-preset-react== 就行。</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev babel-preset-react
+</code></pre>
+<h2 id="配置-babelrc"><a href="#配置-babelrc" class="headerlink" title="配置.babelrc"></a>配置.babelrc</h2><p>在 .babelrc 里配置需要使用的preset</p>
+<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"env"</span><span class="token punctuation">,</span><span class="token string">"react"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h3><p>现在就可以使用 bebel-cli 命令行工具来转换 es或者react 代码了。<br>例如，新建文件 test.js</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>直接使用</p>
+<pre class=" language-bash"><code class="language-bash">$ babel test.js
+</code></pre>
+<p>会将转换结果输出到命令行。结果如下</p>
+<pre class=" language-js"><code class="language-js"><span class="token string">"use strict"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>使用 -o 选项可以指定输出文件</p>
+<pre class=" language-bash"><code class="language-bash">$ babel test.js -o babel.js
+</code></pre>
+<p>babel-cli 还提供了一个直接执行新标准 es 代码的环境 babel-node。在 test.js 添加</p>
+<pre class=" language-js"><code class="language-js"><span class="token function">x</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>执行代码</p>
+<pre class=" language-bash"><code class="language-bash">babel-node test.js
+</code></pre>
 <p>可以在控制台看到执行结果</p>
 <h3 id="配合其他工具使用"><a href="#配合其他工具使用" class="headerlink" title="配合其他工具使用"></a>配合其他工具使用</h3><p>参考babel以及各个工具的官方文档，也可以关注我后续介绍其他工具的博客。</p>
-<h2 id="babel-polyfill"><a href="#babel-polyfill" class="headerlink" title="babel-polyfill"></a>babel-polyfill</h2><p>babel 只转换新的语法，而不会转换新的 es 标准新增的对象和方法，要使用这些对象和方法，需要为当前环境增加一个垫片。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save babel-polyfill</div></pre></td></tr></table></figure></p>
-<p>在代码头部引入<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 根据使用的代码模块化工具</span></div><div class="line"><span class="keyword">import</span> <span class="string">'babel-polyfill'</span>;</div><div class="line"><span class="comment">// 或者</span></div><div class="line"><span class="built_in">require</span>(<span class="string">'babel-polyfill'</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="babel-polyfill"><a href="#babel-polyfill" class="headerlink" title="babel-polyfill"></a>babel-polyfill</h2><p>babel 只转换新的语法，而不会转换新的 es 标准新增的对象和方法，要使用这些对象和方法，需要为当前环境增加一个垫片。</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> --save babel-polyfill
+</code></pre>
+<p>在代码头部引入</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 根据使用的代码模块化工具</span>
+<span class="token keyword">import</span> <span class="token string">'babel-polyfill'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 或者</span>
+<span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'babel-polyfill'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
     
 

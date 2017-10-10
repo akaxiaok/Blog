@@ -275,7 +275,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/Blog/css/prism.css" type="text/css"></head>
 
 
     
@@ -471,9 +471,24 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>《JavaScript函数式编程》里介绍柯里化的时候有个例子写错了，代码如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">curry3</span>(<span class="params">fun</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">last</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">middle</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">first</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> fun(first, middle, last);</div><div class="line">      &#125;;</div><div class="line">    &#125;;</div><div class="line">  &#125;;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> songsPlayed = curry3(_.uniq)(<span class="literal">false</span>)(songToString);</div></pre></td></tr></table></figure></p>
-<p>_.uniq 的参数如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">_.uniq(array, [isSorted], [iteratee])</div></pre></td></tr></table></figure></p>
-<p>作者想要柯里化 Underscore 的 _.uniq 函数，依次接收最后和中间的参数，返回一个接收第一个参数的方法，但是参数传入的顺序写错了，应该写成<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> songsPlayed = curry3(_.uniq)(songToString)(<span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
+        <p>《JavaScript函数式编程》里介绍柯里化的时候有个例子写错了，代码如下</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">curry3</span><span class="token punctuation">(</span>fun<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>last<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>middle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>first<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">fun</span><span class="token punctuation">(</span>first<span class="token punctuation">,</span> middle<span class="token punctuation">,</span> last<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> songsPlayed <span class="token operator">=</span> <span class="token function">curry3</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span>uniq<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">(</span>songToString<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>_.uniq 的参数如下</p>
+<pre class=" language-js"><code class="language-js">_<span class="token punctuation">.</span><span class="token function">uniq</span><span class="token punctuation">(</span>array<span class="token punctuation">,</span> <span class="token punctuation">[</span>isSorted<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>iteratee<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>作者想要柯里化 Underscore 的 _.uniq 函数，依次接收最后和中间的参数，返回一个接收第一个参数的方法，但是参数传入的顺序写错了，应该写成</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> songsPlayed <span class="token operator">=</span> <span class="token function">curry3</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span>uniq<span class="token punctuation">)</span><span class="token punctuation">(</span>songToString<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 <p>但是，作者的代码返回的结果却是正确。这是因为， _.uniq 函数会判断第二个参数，如果不是布尔值，会把它当做第三个参数，也就是迭代方法。<br>看了下该书的勘误表，已经有人提交了这个问题，看名字应该是个中国哥们。<br><img src="https://raw.githubusercontent.com/akaxiaok/Blog/master/source/img/2017/10/error%20list.png" alt="bug list"></p>
 
     

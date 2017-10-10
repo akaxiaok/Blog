@@ -275,7 +275,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/Blog/css/prism.css" type="text/css"></head>
 
 
     
@@ -474,24 +474,48 @@
         <ul>
 <li>javascript中，若省略var关键字而直接赋值，那么这个变量为全局变量，哪怕是在function里定义的。</li>
 <li>所有window对象的属性拥有全局作用域</li>
-<li><p>在Js中函数是没有重载，定义相同函数名、不同参数签名的函数，后面的函数会覆盖前面的函数。调用时，只会调用后面的函数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> n1 = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">value1</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> n1 + <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">alert(add(n1));<span class="comment">//调用的是下面的函数，输出：3</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">value1, value2</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> value1 + <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line">alert(add(n1));<span class="comment">//输出：3</span></div></pre></td></tr></table></figure>
+<li>在Js中函数是没有重载，定义相同函数名、不同参数签名的函数，后面的函数会覆盖前面的函数。调用时，只会调用后面的函数。<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> n1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>value1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> n1 <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span>n1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//调用的是下面的函数，输出：3</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>value1<span class="token punctuation">,</span> value2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> value1 <span class="token operator">+</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span>n1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//输出：3</span>
+</code></pre>
 </li>
-<li><p>arguments 类似于C#的params，操作可变参数：传入函数的参数数量大于定义时的参数数量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showNames</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    alert(name);<span class="comment">//张三</span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</div><div class="line">        alert(<span class="built_in">arguments</span>[i]);<span class="comment">//张三、李四、王五</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">showNames(<span class="string">'张三'</span>,<span class="string">'李四'</span>,<span class="string">'王五'</span>);</div></pre></td></tr></table></figure>
+<li>arguments 类似于C#的params，操作可变参数：传入函数的参数数量大于定义时的参数数量。<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">showNames</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//张三</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arguments<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">alert</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//张三、李四、王五</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">showNames</span><span class="token punctuation">(</span><span class="token string">'张三'</span><span class="token punctuation">,</span><span class="token string">'李四'</span><span class="token punctuation">,</span><span class="token string">'王五'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 </li>
-<li><p>若函数没有指明返回值，默认返回的是’undefined’</p>
+<li>若函数没有指明返回值，默认返回的是’undefined’</li>
+<li>IIFE(立即执行函数)<br>An immediately-invoked function expression (or IIFE, pronounced “iffy”) is a JavaScript design pattern which produces a lexical scope using JavaScript’s function scoping.<pre class=" language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>p1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 </li>
-<li><p>IIFE(立即执行函数)<br>An immediately-invoked function expression (or IIFE, pronounced “iffy”) is a JavaScript design pattern which produces a lexical scope using JavaScript’s function scoping.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">p1</span>) </span>&#123;</div><div class="line">    alert(p1);</div><div class="line">&#125;)(<span class="number">1</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>假设，函数A内部声明了个函数B，函数B引用了函数B之外的变量，并且函数A的返回值为函数B的引用。那么函数B就是闭包函数。</p>
-</li>
-<li>执行以下两个函数，会返回相同的东西吗？<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo1</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">      bar: <span class="string">"hello"</span></div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">  <span class="keyword">return</span></div><div class="line">  &#123;</div><div class="line">      bar: <span class="string">"hello"</span></div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>不会，第二个函数返回undefined。如果某行代码，return 关键词后没有任何东西了，将会自动插入一个分号</p>
-<ul>
+<li>假设，函数A内部声明了个函数B，函数B引用了函数B之外的变量，并且函数A的返回值为函数B的引用。那么函数B就是闭包函数。</li>
+<li>执行以下两个函数，会返回相同的东西吗？<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">return</span> <span class="token punctuation">{</span>
+    bar<span class="token punctuation">:</span> <span class="token string">"hello"</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">foo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">return</span>
+<span class="token punctuation">{</span>
+    bar<span class="token punctuation">:</span> <span class="token string">"hello"</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+不会，第二个函数返回undefined。如果某行代码，return 关键词后没有任何东西了，将会自动插入一个分号</li>
 <li>NaN 不是一个数字 Number.isNaN()检测</li>
 <li>判断回文 1拆分；2反转；3对比</li>
 </ul>

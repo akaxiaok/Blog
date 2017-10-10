@@ -275,7 +275,7 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/Blog/css/prism.css" type="text/css"></head>
 
 
     
@@ -472,7 +472,24 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>最近在做一个打砖块游戏时遇到一个小问题，就是小球有可能会在左右两个边界之间做循环往返运动而导致游戏无法继续进行下去，于是我打算让小球在垂直撞向边界时改变一下方向，但是速度不变，尝试了一些方法但是没有达到效果。后来想到，速度是一个向量，问题就变成了改变一个向量的方向而不改变它的大小，Google一下找到了这个<a href="https://zh.wikipedia.org/zh/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5" target="_blank" rel="external">旋转矩阵</a>Wiki页面。<br>虽然游戏是3D的但是只是在一个平面上运动，所以只需要下面这个旋转矩阵<br><img src="http://images.cnblogs.com/cnblogs_com/castdream/763932/o_f12a2173c9fb0a5e8bd86a9408e70835.png" alt="2D旋转矩阵"></p>
-<p>用原向量矩阵[x,y]乘以旋转矩阵<br>矩阵外积，左行乘右列<br>代码如下<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">  <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></div><div class="line">  <span class="comment"><span class="doctag">///</span> 旋转向量，使其方向改变，大小不变</span></div><div class="line">  <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></div><div class="line">  <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="v"&gt;</span>需要旋转的向量<span class="doctag">&lt;/param&gt;</span></span></div><div class="line">  <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name="angle"&gt;</span>旋转的角度<span class="doctag">&lt;/param&gt;</span></span></div><div class="line">  <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>旋转后的向量<span class="doctag">&lt;/returns&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">private</span> Vector2 <span class="title">RotationMatrix</span>(<span class="params">Vector2 v, <span class="keyword">float</span> angle</span>)</span></div><div class="line"><span class="function">  </span>&#123;</div><div class="line">      <span class="keyword">var</span> x = v.x;</div><div class="line">      <span class="keyword">var</span> y = v.y;</div><div class="line">      <span class="keyword">var</span> sin = Math.Sin(Math.PI * angle / <span class="number">180</span>);</div><div class="line">      <span class="keyword">var</span> cos = Math.Cos(Math.PI * angle / <span class="number">180</span>);</div><div class="line">      <span class="keyword">var</span> newX = x * cos + y * sin;</div><div class="line">      <span class="keyword">var</span> newY = x * -sin + y * cos;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Vector2((<span class="keyword">float</span>)newX, (<span class="keyword">float</span>)newY);</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>用原向量矩阵[x,y]乘以旋转矩阵<br>矩阵外积，左行乘右列<br>代码如下</p>
+<pre class=" language-cs"><code class="language-cs">    /// <summary>
+    /// 旋转向量，使其方向改变，大小不变
+    /// </summary>
+    /// <param name="v">需要旋转的向量</param>
+    /// <param name="angle">旋转的角度</param>
+    /// <returns>旋转后的向量</returns>
+  private Vector2 RotationMatrix(Vector2 v, float angle)
+    {
+        var x = v.x;
+        var y = v.y;
+        var sin = Math.Sin(Math.PI * angle / 180);
+        var cos = Math.Cos(Math.PI * angle / 180);
+        var newX = x * cos + y * sin;
+        var newY = x * -sin + y * cos;
+        return new Vector2((float)newX, (float)newY);
+    }
+</code></pre>
 
     
 
