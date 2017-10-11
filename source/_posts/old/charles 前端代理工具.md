@@ -7,22 +7,22 @@ title: Charles 前端代理工具
 下载安装不用多说。一路确定即可，中间会让你选择是否安装 Firefox 插件，按需选择即可。
 ## 安装证书
 为了拦截 HTTPS 请求，需要安装 SSL 证书。安装过程如图
-![install SSl](https://github.com/akaxiaok/Blog/blob/master/charles/1.install%20SSL.png?raw=true)
-![install SSl](https://github.com/akaxiaok/Blog/blob/master/charles/2.install%20SSl.png?raw=true)
-![install SSl](https://github.com/akaxiaok/Blog/blob/master/charles/3.install%20SSl.png?raw=true)
+![install SSl](./1.install SSL.png);
+![install SSl](./2.install SSL.png);
+![install SSl](./3.install SSL.png);
 ## 设置代理
 SLL 解密没有默认打开，需要手动设置。可以只设置需要拦截的地址和端口，也可以留空，则全部地址和端口都会解密。
-![not decode](https://github.com/akaxiaok/Blog/blob/master/charles/4.not%20decode.png?raw=true)
-![set decode](https://github.com/akaxiaok/Blog/blob/master/charles/5.set%20decode.png?raw=true)
-![set decode](https://github.com/akaxiaok/Blog/blob/master/charles/6.set%20decode.png?raw=true)
+![not decode](./4.not%20decode.png)
+![set decode](./5.set%20decode.png)
+![set decode](./6.set%20decode.png)
 
 ## 使用
 下图是 GitHub 头像图片的请求，我们拦截它修改为本地的一个图片。
-![remote](https://github.com/akaxiaok/Blog/blob/master/charles/7.remote.png?raw=true)
+![remote](./7.remote.png)
 这里 Charles 为会将请求按地址归类，看起来比 fiddler 每个请求单独一行要清晰。
-![local](https://github.com/akaxiaok/Blog/blob/master/charles/8.local.png?raw=true)
+![local](./8.local.png)
 在 Charles 里找到该请求，右键然后点击 Map Local。大部分情况需要将 Query 一栏清空保证该路径所有请求都使用本地文件。Local Path 选择需要替换为哪一个本地文件。
-![map local](https://github.com/akaxiaok/Blog/blob/master/charles/9.map%20local.png?raw=true)
-![map local](https://github.com/akaxiaok/Blog/blob/master/charles/10.map%20local.png?raw=true)
+![map local](./9.map%20local.png)
+![map local](./10.map%20local.png)
 回到浏览器刷新，可以看到已经成功的将请求替换为了本地文件。
-![complete](https://github.com/akaxiaok/Blog/blob/master/charles/11.complete.png?raw=true)
+![complete](./11.complete.png)
