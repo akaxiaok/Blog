@@ -72,7 +72,7 @@
 
     
         <meta property="article:published_time" content="Mon Aug 21 2017 23:16:26 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Aug 22 2017 21:54:37 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Oct 11 2017 20:25:07 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -113,7 +113,7 @@
     "headline": "Charles 前端代理工具",
     "url": "https://akaxiaok.github.io/Blog/Blog/2017/08/21/old/charles 前端代理工具/index.html",
     "datePublished": "Mon Aug 21 2017 23:16:26 GMT+0800",
-    "dateModified": "Tue Aug 22 2017 21:54:37 GMT+0800",
+    "dateModified": "Wed Oct 11 2017 20:25:07 GMT+0800",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -473,9 +473,9 @@
     
         <p>在前端开发的过程中，有时候生产环境出了问题需要解决，但是那上面的代码又不能随便修改，就需要在本地将远程文件拦截并替换为自己本地的文件。fiddler 这样的软件就有这个功能。但是公司最近的环境不知道做了什么变动，fiddler 用不了，折腾了几天也解决不了，只好谋它法。最后，找到了 Charles，它能够很好的适应公司环境，使用起来也比较方便。接下来介绍一下它的使用方法。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>下载安装不用多说。一路确定即可，中间会让你选择是否安装 Firefox 插件，按需选择即可。</p>
-<h2 id="安装证书"><a href="#安装证书" class="headerlink" title="安装证书"></a>安装证书</h2><p>为了拦截 HTTPS 请求，需要安装 SSL 证书。安装过程如图<br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/1.install%20SSL.png?raw=true" alt="install SSl"><br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/2.install%20SSl.png?raw=true" alt="install SSl"><br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/3.install%20SSl.png?raw=true" alt="install SSl"></p>
-<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><p>SLL 解密没有默认打开，需要手动设置。可以只设置需要拦截的地址和端口，也可以留空，则全部地址和端口都会解密。<br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/4.not%20decode.png?raw=true" alt="not decode"><br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/5.set%20decode.png?raw=true" alt="set decode"><br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/6.set%20decode.png?raw=true" alt="set decode"></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>下图是 GitHub 头像图片的请求，我们拦截它修改为本地的一个图片。<br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/7.remote.png?raw=true" alt="remote"><br>这里 Charles 为会将请求按地址归类，看起来比 fiddler 每个请求单独一行要清晰。<br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/8.local.png?raw=true" alt="local"><br>在 Charles 里找到该请求，右键然后点击 Map Local。大部分情况需要将 Query 一栏清空保证该路径所有请求都使用本地文件。Local Path 选择需要替换为哪一个本地文件。<br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/9.map%20local.png?raw=true" alt="map local"><br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/10.map%20local.png?raw=true" alt="map local"><br>回到浏览器刷新，可以看到已经成功的将请求替换为了本地文件。<br><img src="https://github.com/akaxiaok/Blog/blob/master/charles/11.complete.png?raw=true" alt="complete"></p>
+<h2 id="安装证书"><a href="#安装证书" class="headerlink" title="安装证书"></a>安装证书</h2><p>为了拦截 HTTPS 请求，需要安装 SSL 证书。安装过程如图<br><img src="./1.install SSL.png" alt="install SSl">;<br><img src="./2.install SSL.png" alt="install SSl">;<br><img src="./3.install SSL.png" alt="install SSl">;</p>
+<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><p>SLL 解密没有默认打开，需要手动设置。可以只设置需要拦截的地址和端口，也可以留空，则全部地址和端口都会解密。<br><img src="./4.not%20decode.png" alt="not decode"><br><img src="./5.set%20decode.png" alt="set decode"><br><img src="./6.set%20decode.png" alt="set decode"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>下图是 GitHub 头像图片的请求，我们拦截它修改为本地的一个图片。<br><img src="./7.remote.png" alt="remote"><br>这里 Charles 为会将请求按地址归类，看起来比 fiddler 每个请求单独一行要清晰。<br><img src="./8.local.png" alt="local"><br>在 Charles 里找到该请求，右键然后点击 Map Local。大部分情况需要将 Query 一栏清空保证该路径所有请求都使用本地文件。Local Path 选择需要替换为哪一个本地文件。<br><img src="./9.map%20local.png" alt="map local"><br><img src="./10.map%20local.png" alt="map local"><br>回到浏览器刷新，可以看到已经成功的将请求替换为了本地文件。<br><img src="./11.complete.png" alt="complete"></p>
 
     
 
