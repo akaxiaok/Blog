@@ -15,7 +15,7 @@ Math.pow(2, 53) === Math.pow(2, 53) + 1
 ## 浮点数
 JavaScript 里的数字只有一种类型 Number，它遵循 IEEE 754 标准，为 64 位双精度浮点数。所谓浮点数是相对于定点数而言的。定点数的整数部分和小数部分都有固定的长度，而浮点数则会根据实际的情况调整小数点位置。
 JS 中的 64 位浮点数可以表现为以下二进制形式：
-![float](/float.png)
+![float](./float.png)
 以科学计数法表示，
 $$V=(-1)^{S} \times M \times 2^{E}$$
 即第 1 位 S 为符号位，决定该数是正数（0）还是负数（1）。
@@ -46,7 +46,7 @@ $2^{53}+1$ 为 1.000...0001 去掉首位 1，M 为 1.000...1，因此 M 为 000.
 ``` js
 Math.pow(2, 53) === Math.pow(2, 53) + 1
 ```
-因此结果为 true。ECMAScript 2015 新增了 `Number.MAX_SAFE_INTEGER` 返回可以精确表示的最大整数——$2^{53}-1$ 即 9007199254740991。相应的，有 Number.MIN_SAFE_INTEGER。还增加了 `Number.isSafeInteger() `方法用于判断一个数是否是可以精确表示的整数。
+因此结果为 true。ECMAScript 2015 新增了 `Number.MAX_SAFE_INTEGER` 返回可以精确表示的最大整数——$2^{53}-1$ 即 9007199254740991。相应的，有 `Number.MIN_SAFE_INTEGER`。还增加了 `Number.isSafeInteger() `方法用于判断一个数是否是可以精确表示的整数。
 
 对于 0.1 + 0.3，先把他们转换成二进制再相加
 ``` js
