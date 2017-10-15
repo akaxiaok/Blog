@@ -4,7 +4,7 @@
 
 # Head info
 head:
-    favicon: "/Blogimg/favicon.png"
+    favicon: "/Blog/img/favicon.png"
     high_res_favicon: "/Blog/img/favicon.png"
     apple_touch_icon: "/Blog/img/favicon.png"
     keywords:
@@ -170,8 +170,8 @@ sidebar:
 # When you set 'use' as true, the needed css, js, font file will have a new src.
 # The new src will have the base domain you configured in 'base'.
 materialcdn: 
-    use: 
-    base: 
+    use:
+    base:
 
 # Comment Systems
 # Available value of "use":
