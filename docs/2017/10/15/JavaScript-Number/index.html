@@ -72,7 +72,7 @@
 
     
         <meta property="article:published_time" content="Sun Oct 15 2017 06:26:15 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Oct 15 2017 12:50:47 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Oct 31 2017 20:41:51 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -113,7 +113,7 @@
     "headline": "JavaScript_Number",
     "url": "https://akaxiaok.github.io/Blog/Blog/2017/10/15/JavaScript-Number/index.html",
     "datePublished": "Sun Oct 15 2017 06:26:15 GMT+0800",
-    "dateModified": "Sun Oct 15 2017 12:50:47 GMT+0800",
+    "dateModified": "Tue Oct 31 2017 20:41:51 GMT+0800",
     "description": "",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -323,7 +323,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不准确的数字"><span class="post-toc-number">1.</span> <span class="post-toc-text">不准确的数字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浮点数"><span class="post-toc-number">2.</span> <span class="post-toc-text">浮点数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#做两个练习"><span class="post-toc-number">3.</span> <span class="post-toc-text">做两个练习</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JavaScript-Number"><span class="post-toc-number">4.</span> <span class="post-toc-text">JavaScript Number</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不准确的数字"><span class="post-toc-number">1.</span> <span class="post-toc-text">不准确的数字</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浮点数"><span class="post-toc-number">2.</span> <span class="post-toc-text">浮点数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#做两个练习"><span class="post-toc-number">3.</span> <span class="post-toc-text">做两个练习</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JavaScript-Number"><span class="post-toc-number">4.</span> <span class="post-toc-text">JavaScript Number</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Number-MAX-VALUE、Number-MIN-VALUE"><span class="post-toc-number">5.</span> <span class="post-toc-text">Number.MAX_VALUE、Number.MIN_VALUE</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -495,6 +495,7 @@
 </code></pre>
 <p>再转成十进制则是 0.30000000000000004</p>
 <p>因此在处理超大数和小数的时候需要十分小心，可能会出现意想不到的结果。在引用列表的第一篇文章介绍了一些处理方法，感兴趣的可以看一下。</p>
+<h2 id="Number-MAX-VALUE、Number-MIN-VALUE"><a href="#Number-MAX-VALUE、Number-MIN-VALUE" class="headerlink" title="Number.MAX_VALUE、Number.MIN_VALUE"></a>Number.MAX_VALUE、Number.MIN_VALUE</h2><p>Number.MAX_VALUE 是 JavaScript 能够表示的最大的数，二进制为  $2^{1024} - 2^{971}$，十进制约为 1.7976931348623157e+308。因为 E 为 2047 时用于表示 Infinity 和 NaN，所以 Number.MAX_VALUE 的指数为 2046。内存中存储为<br><img src="./max.png" alt="max"><br>Number.MIN_VALUE 是 JavaScript 能够表示的最接近 0 的数，二进制为 $2^{-1075}$，十进制约为 5e-324。内存中存储为<br><img src="./min.png" alt="min"></p>
 <blockquote>
 <p><a href="http://web.jobbole.com/92685/" target="_blank" rel="external">http://web.jobbole.com/92685/</a><br><a href="http://www.ruanyifeng.com/blog/2010/06/ieee_floating-point_representation.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2010/06/ieee_floating-point_representation.html</a><br><a href="https://zh.wikipedia.org/wiki/IEEE_754#.E6.B5.AE.E9.BB.9E.E6.95.B8.E7.9A.84.E6.8D.A8.E5.85.A5" target="_blank" rel="external">https://zh.wikipedia.org/wiki/IEEE_754#.E6.B5.AE.E9.BB.9E.E6.95.B8.E7.9A.84.E6.8D.A8.E5.85.A5</a></p>
 </blockquote>
