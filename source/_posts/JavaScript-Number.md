@@ -58,6 +58,12 @@ Math.pow(2, 53) === Math.pow(2, 53) + 1
 
 因此在处理超大数和小数的时候需要十分小心，可能会出现意想不到的结果。在引用列表的第一篇文章介绍了一些处理方法，感兴趣的可以看一下。
 
+## Number.MAX_VALUE、Number.MIN_VALUE
+Number.MAX_VALUE 是 JavaScript 能够表示的最大的数，二进制为  $2^{1024} - 2^{971}$，十进制约为 1.7976931348623157e+308。因为 E 为 2047 时用于表示 Infinity 和 NaN，所以 Number.MAX_VALUE 的指数为 2046。内存中存储为
+![max](./max.png)
+Number.MIN_VALUE 是 JavaScript 能够表示的最接近 0 的数，二进制为 $2^{-1075}$，十进制约为 5e-324。内存中存储为
+![min](./min.png)
+
 > http://web.jobbole.com/92685/
 > http://www.ruanyifeng.com/blog/2010/06/ieee_floating-point_representation.html
 > https://zh.wikipedia.org/wiki/IEEE_754#.E6.B5.AE.E9.BB.9E.E6.95.B8.E7.9A.84.E6.8D.A8.E5.85.A5
