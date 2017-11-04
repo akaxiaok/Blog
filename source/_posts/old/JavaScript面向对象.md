@@ -18,7 +18,7 @@ title: JavaScript面向对象编程
     var p1 = createPerson('Kimi', '23');
     p1.say();// I'm Kimi, from factory.
 ```
-**缺点：工厂模式能创建多个相似的对象，但都是Objec类型，无发区分。**
+**缺点：工厂模式能创建多个相似的对象，但都是Objec类型，无法区分。**
 
 2.构造函数模式
 ```js
