@@ -471,7 +471,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>最近在做一个打砖块游戏时遇到一个小问题，就是小球有可能会在左右两个边界之间做循环往返运动而导致游戏无法继续进行下去，于是我打算让小球在垂直撞向边界时改变一下方向，但是速度不变，尝试了一些方法但是没有达到效果。后来想到，速度是一个向量，问题就变成了改变一个向量的方向而不改变它的大小，Google一下找到了这个<a href="https://zh.wikipedia.org/zh/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5" target="_blank" rel="external">旋转矩阵</a>Wiki页面。<br>虽然游戏是3D的但是只是在一个平面上运动，所以只需要下面这个旋转矩阵<br><img src="http://images.cnblogs.com/cnblogs_com/castdream/763932/o_f12a2173c9fb0a5e8bd86a9408e70835.png" alt="2D旋转矩阵"></p>
+        <p>最近在做一个打砖块游戏时遇到一个小问题，就是小球有可能会在左右两个边界之间做循环往返运动而导致游戏无法继续进行下去，于是我打算让小球在垂直撞向边界时改变一下方向，但是速度不变，尝试了一些方法但是没有达到效果。后来想到，速度是一个向量，问题就变成了改变一个向量的方向而不改变它的大小，Google一下找到了这个<a href="https://zh.wikipedia.org/zh/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5" target="_blank" rel="noopener">旋转矩阵</a>Wiki页面。<br>虽然游戏是3D的但是只是在一个平面上运动，所以只需要下面这个旋转矩阵<br><img src="http://images.cnblogs.com/cnblogs_com/castdream/763932/o_f12a2173c9fb0a5e8bd86a9408e70835.png" alt="2D旋转矩阵"></p>
 <p>用原向量矩阵[x,y]乘以旋转矩阵<br>矩阵外积，左行乘右列<br>代码如下</p>
 <pre class=" language-cs"><code class="language-cs">    /// <summary>
     /// 旋转向量，使其方向改变，大小不变
@@ -606,7 +606,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/Blog/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/Blog/archives/2017/08/">八月 2017<span class="sidebar_archives-count">21</span></a>
+                <a class="sidebar_archives-link" href="/Blog/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/Blog/archives/2017/10/">十月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/Blog/archives/2017/08/">八月 2017<span class="sidebar_archives-count">21</span></a>
             </ul>
         </li>
         
